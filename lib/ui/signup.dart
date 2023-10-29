@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:login_flutter/ui/login.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -34,6 +35,7 @@ class _SignupState extends State<Signup> {
           child: Column(
             children: [
               const SizedBox(height: 100),
+              Image.asset('assets/Logo.png'),
               Text(
                 "Register",
                 style: Theme.of(context).textTheme.headlineLarge,
@@ -198,6 +200,16 @@ class _SignupState extends State<Signup> {
                         Navigator.pop(context);
                       }
                     },
+
+
+                    // Navigator.pushReplacement(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //         builder: (context) {
+                    //           return Home();
+                    //         },
+                    //       ),
+                    //     );
                     child: const Text("Register"),
                   ),
                   Row(
@@ -205,7 +217,9 @@ class _SignupState extends State<Signup> {
                     children: [
                       const Text("Already have an account?"),
                       TextButton(
-                        onPressed: () => Navigator.pop(context),
+                        onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context){
+                          return Login();
+                        })),
                         child: const Text("Login"),
                       ),
                     ],

@@ -1,3 +1,5 @@
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -38,7 +40,8 @@ class _LoginState extends State<Login> {
           padding: const EdgeInsets.all(30.0),
           child: Column(
             children: [
-              const SizedBox(height: 150),
+
+              Image.asset('assets/Logo.png'),
               Text(
                 "Welcome back",
                 style: Theme.of(context).textTheme.headlineLarge,

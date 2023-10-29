@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:login_flutter/ui/navbar.dart';
 
 import 'login.dart';
 
@@ -11,8 +12,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Navbar(),
       appBar: AppBar(
-        title: const Text("Login App"),
+        title: const Text("New India Exports"),
         elevation: 0,
         actions: [
           Padding(
@@ -42,22 +44,39 @@ class Home extends StatelessWidget {
         ],
       ),
       backgroundColor: Theme.of(context).colorScheme.primary,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(
-              "Welcome 🎉",
-              style: Theme.of(context).textTheme.bodyLarge,
+            Container(
+            // desktop1s31 (4:124)
+            
+            width:  double.infinity,
+            
+            decoration:  BoxDecoration (
+              gradient:  RadialGradient (
+                center:  Alignment(-0.626, 0.2),
+                radius:  0.7,
+                colors:  <Color>[Color(0xff22ceaf), Color(0xff1b413a)],
+                stops:  <double>[0, 0.741],
+              ),
+            ),),
+            Row(
+              children: [
+                Text(
+              "Welcome ",
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
-            const SizedBox(height: 10),
+            
             Text(
               _boxLogin.get("userName"),
-              style: Theme.of(context).textTheme.headlineLarge,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
+              ],
+            )
+            
           ],
         ),
-      ),
-    );
+      );
+    
   }
 }
